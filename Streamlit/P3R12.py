@@ -40,6 +40,8 @@ G65 = ("Streamlit_Resources/G65.jpeg")
 GTC = ("Streamlit_Resources/GTC.jpeg")
 GTCS = ("Streamlit_Resources/GTCS.jpeg")
 
+
+# Choice conformation function. 
 def GreatChoice():
     st.write("Great choice!")
     st.balloons()
