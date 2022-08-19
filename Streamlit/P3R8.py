@@ -42,7 +42,7 @@ if st.button("Mid-Sized!"):
 if st.button("Compact Car!"):
     st.image(Comp)
 
-if st.button("Luxary Car!"):
+if st.button("Luxury Car!"):
     st.image(lux)
 
 if st.button("MiniVan!"):
