@@ -27,7 +27,6 @@ Huracan = ("Streamlit_Resources/Huracan.jpeg")
 Deville = ("Streamlit_Resources/Deville.png")
 RangeRover = ("Streamlit_Resources/RangeRover.png")
 VanderHall = ("Streamlit_Resources/VanderHall.jpeg")
-SideBarTop = ("Streamlit_Resources/Sidebar_top.png")
 SUCCESSimg = ("Streamlit_Resources/Long_Road.jpg")
 
 #Title IMG print
@@ -133,8 +132,7 @@ with col12:
 
 
 
-#Sidebar image:
-st.sidebar.image(SideBarTop)
+
 
 #Sidebar selection
 
