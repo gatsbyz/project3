@@ -11,7 +11,7 @@ web3.eth.defaultAccount = web3.eth.accounts[0]
 # Path to the compiled contract JSON file
 compiled_contract_path = 'build/contracts/Rental.json'
 # Deployed contract address (see `migrate` command output: `contract address`)
-deployed_contract_address = '0x12dC45135144a6F87d5EE5C6495DF14e6A258791'
+deployed_contract_address = '0x56528890De031184b007694D73965CE82CfcA043'
 
 with open(compiled_contract_path) as file:
     contract_json = json.load(file)  # load contract info as JSON
@@ -21,7 +21,8 @@ with open(compiled_contract_path) as file:
 contract = web3.eth.contract(address=deployed_contract_address, abi=contract_abi)
 
 # Call contract function (this is not persisted to the blockchain)
-# print(contract.functions.getCarCount())
 message = contract.functions.getCarCount().transact()
 
-print(int.from_bytes(message, "big"))
+print(message)
+# print(message[0])
+# print(int.from_bytes(message, "big"))

@@ -17,7 +17,20 @@
     ```
 5. In the terminal `truffle(develop)>`, run `migrate`.
 
-6. Open another terminal window, and run this:
+
+6. Copy contract address to app.py
+    ```
+    2_deploy_contracts.js
+    =====================
+
+    Replacing 'Rental'
+    ------------------
+    > transaction hash:    0x02917cc0f53fb5c36a6eb166f6848a44f32f17c2f732ac9b9c9b098dbe7fac71
+    > Blocks: 0            Seconds: 0
+    > contract address:    0x56528890De031184b007694D73965CE82CfcA043
+    ```
+
+7. Open another terminal window, and run this:
     ```
     $ pip3 install web3
     $ python3 app.py
