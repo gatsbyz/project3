@@ -9,6 +9,7 @@ from pathlib import Path
 st.write("# EtherCAR RENTAL CAR!")
 st.write("By BlueSky")
 
+
 titleIMG = ("Streamlit_Resources/Title.PNG")
 st.image(titleIMG)
 
@@ -17,6 +18,7 @@ st.write("# Hi, this is BlueSky's first web app! :sunglasses:")
 #Price Chart import
 Price1Chart = pd.read_csv(
     Path("Streamlit_Resources/PriceChart1.csv"),
+
     infer_datetime_format=False)
 df = pd.DataFrame(Price1Chart)
 
@@ -24,10 +26,13 @@ df = pd.DataFrame(Price1Chart)
 st.write(df)
 
 #Image Data
+
 Mid_Size = ("Streamlit_Resources/mid.jpg")
 lux = ("Streamlit_Resources/lux.jpg")
 MiniVan = ("Streamlit_Resources/Mini.jpg")
 Comp = ("Streamlit_Resources/COMP.jpg")
+
+
 
 
 #Car selection
