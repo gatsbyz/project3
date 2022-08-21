@@ -159,3 +159,4 @@ if st.sidebar.button("Book your EtherCar!!"):
     st.sidebar.write("Enjoy your trip! :sunglasses:")
     st.sidebar.balloons()
     st.sidebar.image(SUCCESSimg)
+    st.success()
