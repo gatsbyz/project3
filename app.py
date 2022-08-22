@@ -14,20 +14,16 @@ from pathlib import Path
 blockchain_address = 'HTTP://127.0.0.1:7545'
 
 
-
 # Client instance to interact with the blockchain
 web3 = Web3(HTTPProvider(blockchain_address))
-
 
 
 # Set the default account (so we don't need to set the "from" for every transaction call)
 web3.eth.defaultAccount = web3.eth.accounts[0]
 
 
-
 # Path to the compiled contract JSON file
 compiled_contract_path = 'build/contracts/Rental.json'
-
 
 
 # Deployed contract address (see `migrate` command output: `contract address`)
@@ -82,7 +78,6 @@ SUCCESSimg = ("Streamlit_Resources/Long_Road.jpg")
 st.image(titleIMG)
 
 
-
 # Price Chart import
 Price1Chart = pd.read_csv(
     Path("Streamlit_Resources/PriceChart1.csv"),
@@ -93,26 +88,24 @@ PriceChartDF = pd.DataFrame(Price1Chart)
 # st.write(PriceChartDF)
 
 
-
 # Choice conformation function.
 def GreatChoice():
-    st.write("Great choice!")
-    st.write(":sunglasses:")
+    st.write(Hourly)
+    st.write(Daily)
+    st.sidebar.write("# Great choice!:sunglasses:")
+    st.sidebar.write("# Please enter your Ethercar Duration & Date bellow :arrow_down:")
 
 
 # Car selection coice (user input)
 st.write("# Pick your Car!")
 
 
-#Car Data dictinary created.
+# Car Data dictinary created.
 
-CarData = {'MOD' : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-           'hourly' : [111.25, 250, 100, 200, 50, 111.25, 100, 100, 150, 88, 50, 100],
-           'day' : [1000, 2000, 600, 1200, 250, 700, 700, 600, 1200, 475, 250, 600]
- }
-
-
-
+CarData = {'MOD': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+           'HOURLY': [111.25, 250, 100, 200, 50, 111.25, 100, 100, 150, 88, 50, 100],
+           'DAY': [1000, 2000, 600, 1200, 250, 700, 700, 600, 1200, 475, 250, 600]
+           }
 
 
 # First row of colums created:
@@ -123,14 +116,18 @@ with col1:
     st.image(Por)
     if st.button("Book your 911!"):
         carId = 1
-        Porche = CarData['MOD'][1]
+        ModleID = CarData['MOD'][0]
+        Hourly = CarData['HOURLY'][0]
+        Daily = CarData['DAY'][0]
         GreatChoice()
 
 with col2:
     st.image(Aventador)
     if st.button("Book your Aventador!"):
-        carId = 2 
-        Lamborgini = CarData['MOD'][1]
+        carId = 2
+        ModleID = CarData['MOD'][1]
+        Hourly = CarData['HOURLY'][1]
+        Daily = CarData['DAY'][1]
         GreatChoice()
 
 
@@ -138,7 +135,9 @@ with col3:
     st.image(C8)
     if st.button("Book your C8!"):
         carId = 3
-        Corvette = CarData['MOD'][2]
+        ModleID = CarData['MOD'][2]
+        Hourly = CarData['HOURLY'][2]
+        Daily = CarData['DAY'][2]
         GreatChoice()
 
 # Second row of columns created:
@@ -148,22 +147,28 @@ col4, col5, col6 = st.columns(3)
 with col4:
     st.image(Dawn)
     if st.button("book your Dawn!"):
-        RR = CarData['MOD'][3]
         carId = 4
+        ModleID = CarData['MOD'][3]
+        Hourly = CarData['HOURLY'][3]
+        Daily = CarData['DAY'][3]
         GreatChoice()
 
 with col5:
     st.image(E350)
     if st.button("Book your E350!"):
-        E350 = CarData['MOD'][4]
         carId = 5
+        ModleID = CarData['MOD'][4]
+        Hourly = CarData['HOURLY'][4]
+        Daily = CarData['DAY'][4]
         GreatChoice()
 
 with col6:
     st.image(G65)
     if st.button("Book your G65!"):
-        Glendewagon = CarData['MOD'][5]
         carId = 6
+        ModleID = CarData['MOD'][5]
+        Hourly= CarData['HOURLY'][5]
+        Daily = CarData['DAY'][5]
         GreatChoice()
 
 
@@ -174,22 +179,28 @@ col7, col8, col9 = st.columns(3)
 with col7:
     st.image(GTC)
     if st.button("Book your GTC!"):
-        BentlyGTC = CarData['MOD'][6]
         carId = 7
+        ModleID = CarData['MOD'][6]
+        Hourly = CarData['HOURLY'][6]
+        Daily = CarData['DAY'][6]
         GreatChoice()
 
 with col8:
     st.image(GTCS)
     if st.button("Book your GTCS V8S!"):
-        BentlyGTCS = CarData['MOD'][7]
         carId = 8
+        ModleID = CarData['MOD'][7]
+        Hourly = CarData['HOURLY'][7]
+        Daily = CarData['DAY'][7]
         GreatChoice()
 
 with col9:
     st.image(Huracan)
     if st.button("Book your Huracan"):
-        Lamborgini = CarData['MOD'][8]
         carId = 9
+        ModleID = CarData['MOD'][8]
+        Hourly = CarData['HOURLY'][8]
+        Daily = CarData['DAY'][8]
         GreatChoice()
 
 # Fourth row of columns created:
@@ -199,23 +210,31 @@ col10, col11, col12 = st.columns(3)
 with col10:
     st.image(RangeRover)
     if st.button("Book your Range Rover!"):
-        HSE = CarData['MOD'][9]
         carId = 10
+        ModleID = CarData['MOD'][9]
+        Hourly = CarData['HOURLY'][9]
+        Daily = CarData['DAY'][9]
         GreatChoice()
 
 with col11:
     st.image(VanderHall)
     if st.button("Book Your VanderHall!"):
-        VanderH = CarData['MOD'][10]
         carId = 11
+        ModleID = CarData['MOD'][10]
+        Hourly = CarData['HOURLY'][10]
+        Daily = CarData['DAY'][10]
         GreatChoice()
 
 with col12:
     st.image(Deville)
     if st.button("Book your Deville now!"):
-        Cadilac = CarData['MOD'][11]
         carId = 12
+        ModleID = CarData['MOD'][11]
+        Hourly = CarData['HOURLY'][11]
+        Daily = CarData['DAY'][11]
         GreatChoice()
+
+
 
 
 # Sidebar image:
@@ -240,7 +259,7 @@ time_input = st.sidebar.time_input("Please select your ", value=None, key=None,
                                    help=None, on_change=None, args=None, kwargs=None, disabled=False)
 
 # Rental book button!(User input)
-#End of if statment also includes call to 'rent' function contained in 'Rental.sol'. 
+# End of if statment also includes call to 'rent' function contained in 'Rental.sol'.
 if st.sidebar.button("Book your EtherCar!!"):
     st.sidebar.write("# Succsess!")
     st.sidebar.write("Thank your for using EtherCar!!")
