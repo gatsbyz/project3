@@ -90,8 +90,9 @@ PriceChartDF = pd.DataFrame(Price1Chart)
 
 # Choice conformation function.
 def GreatChoice():
-    st.write(Hourly)
-    st.write(Daily)
+    HH = Hourly * 4
+    st.write("Four Hour Rate", HH)
+    st.write("Daily Rate", Daily)
     st.sidebar.write("# Great choice!:sunglasses:")
     st.sidebar.write("# Please enter your Ethercar Duration & Date bellow :arrow_down:")
 
