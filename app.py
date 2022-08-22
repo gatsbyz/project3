@@ -12,13 +12,24 @@ from pathlib import Path
 
 # truffle development blockchain address
 blockchain_address = 'HTTP://127.0.0.1:7545'
+
+
+
 # Client instance to interact with the blockchain
 web3 = Web3(HTTPProvider(blockchain_address))
+
+
+
 # Set the default account (so we don't need to set the "from" for every transaction call)
 web3.eth.defaultAccount = web3.eth.accounts[0]
 
+
+
 # Path to the compiled contract JSON file
 compiled_contract_path = 'build/contracts/Rental.json'
+
+
+
 # Deployed contract address (see `migrate` command output: `contract address`)
 deployed_contract_address = '0x01aA9a6693530903D3d63a8447731D31c56ae4Ad'
 
@@ -27,12 +38,15 @@ with open(compiled_contract_path) as file:
     # fetch contract's abi - necessary to call its functions
     contract_abi = contract_json['abi']
 
+
 # Fetch deployed contract reference
 contract = web3.eth.contract(
     address=deployed_contract_address, abi=contract_abi)
 
+
 # Call contract function (this is not persisted to the blockchain)
 message = contract.functions.getCarCount().transact()
+
 
 print(message)
 # print(message[0])
