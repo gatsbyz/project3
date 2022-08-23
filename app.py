@@ -96,6 +96,29 @@ def GreatChoice():
     st.sidebar.write("# Great choice!:sunglasses:")
     st.sidebar.write("# Please enter your Ethercar Duration & Date bellow :arrow_down:")
 
+def GreatChoice2():
+    HH = Hourly * 4
+    st.write("Four Hour Rate", HH)
+    st.write("Daily Rate", Daily)
+    st.sidebar.write("# Great choice!:sunglasses:")
+    st.sidebar.write("# Please enter your Ethercar Duration & Date bellow :arrow_down:")  
+
+def getRental():
+    st.sidebar.write(car.getId())
+    return contract.functions.rent(car.getId()).transact()
+
+class Car:
+  #def __init__(self):
+    #self.carId = 0
+
+  def setId(self, id):
+    self.carId = id
+    print(self.carId)
+  def getId(self):
+    return self.carId
+car = Car()
+
+
 
 # Car selection coice (user input)
 st.write("# Pick your Car!")
@@ -116,16 +139,17 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.image(Por)
     if st.button("Book your 911!"):
-        carId = 1
+        car.setId(1)
         ModleID = CarData['MOD'][0]
         Hourly = CarData['HOURLY'][0]
         Daily = CarData['DAY'][0]
         GreatChoice()
 
+
 with col2:
     st.image(Aventador)
     if st.button("Book your Aventador!"):
-        carId = 2
+        car.setId(2)
         ModleID = CarData['MOD'][1]
         Hourly = CarData['HOURLY'][1]
         Daily = CarData['DAY'][1]
@@ -135,7 +159,7 @@ with col2:
 with col3:
     st.image(C8)
     if st.button("Book your C8!"):
-        carId = 3
+        car.setId(3)
         ModleID = CarData['MOD'][2]
         Hourly = CarData['HOURLY'][2]
         Daily = CarData['DAY'][2]
@@ -148,7 +172,7 @@ col4, col5, col6 = st.columns(3)
 with col4:
     st.image(Dawn)
     if st.button("book your Dawn!"):
-        carId = 4
+        car.setId(4)
         ModleID = CarData['MOD'][3]
         Hourly = CarData['HOURLY'][3]
         Daily = CarData['DAY'][3]
@@ -157,7 +181,7 @@ with col4:
 with col5:
     st.image(E350)
     if st.button("Book your E350!"):
-        carId = 5
+        car.setId(5)
         ModleID = CarData['MOD'][4]
         Hourly = CarData['HOURLY'][4]
         Daily = CarData['DAY'][4]
@@ -166,7 +190,7 @@ with col5:
 with col6:
     st.image(G65)
     if st.button("Book your G65!"):
-        carId = 6
+        car.setId(6)
         ModleID = CarData['MOD'][5]
         Hourly= CarData['HOURLY'][5]
         Daily = CarData['DAY'][5]
@@ -180,7 +204,7 @@ col7, col8, col9 = st.columns(3)
 with col7:
     st.image(GTC)
     if st.button("Book your GTC!"):
-        carId = 7
+        car.setId(7)
         ModleID = CarData['MOD'][6]
         Hourly = CarData['HOURLY'][6]
         Daily = CarData['DAY'][6]
@@ -189,7 +213,7 @@ with col7:
 with col8:
     st.image(GTCS)
     if st.button("Book your GTCS V8S!"):
-        carId = 8
+        car.setId(8)
         ModleID = CarData['MOD'][7]
         Hourly = CarData['HOURLY'][7]
         Daily = CarData['DAY'][7]
@@ -198,7 +222,7 @@ with col8:
 with col9:
     st.image(Huracan)
     if st.button("Book your Huracan"):
-        carId = 9
+        car.setId(9)
         ModleID = CarData['MOD'][8]
         Hourly = CarData['HOURLY'][8]
         Daily = CarData['DAY'][8]
@@ -211,7 +235,7 @@ col10, col11, col12 = st.columns(3)
 with col10:
     st.image(RangeRover)
     if st.button("Book your Range Rover!"):
-        carId = 10
+        car.setId(10)
         ModleID = CarData['MOD'][9]
         Hourly = CarData['HOURLY'][9]
         Daily = CarData['DAY'][9]
@@ -220,7 +244,7 @@ with col10:
 with col11:
     st.image(VanderHall)
     if st.button("Book Your VanderHall!"):
-        carId = 11
+        car.setId(11)
         ModleID = CarData['MOD'][10]
         Hourly = CarData['HOURLY'][10]
         Daily = CarData['DAY'][10]
@@ -229,7 +253,7 @@ with col11:
 with col12:
     st.image(Deville)
     if st.button("Book your Deville now!"):
-        carId = 12
+        car.setId(12)
         ModleID = CarData['MOD'][11]
         Hourly = CarData['HOURLY'][11]
         Daily = CarData['DAY'][11]
@@ -256,8 +280,9 @@ calendar_input = st.sidebar.date_input("Please select your rental date: ", value
                                        max_value=None, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False)
 
 # Time of Rental Selection(user input)
-time_input = st.sidebar.time_input("Please select your ", value=None, key=None,
+time_input = st.sidebar.time_input("Please select the time of your reservation:", value=None, key=None,
                                    help=None, on_change=None, args=None, kwargs=None, disabled=False)
+Val = 100000000000000000
 
 # Rental book button!(User input)
 # End of if statment also includes call to 'rent' function contained in 'Rental.sol'.
@@ -267,5 +292,6 @@ if st.sidebar.button("Book your EtherCar!!"):
     st.sidebar.write("Enjoy your trip! :sunglasses:")
     st.sidebar.balloons()
     st.sidebar.image(SUCCESSimg)
-    Rental = contract.functions.rent(carId).transact()
+    Rental = getRental()
+    st.sidebar.write(carId)
     st.success(Rental)
