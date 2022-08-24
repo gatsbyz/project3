@@ -1,3 +1,52 @@
+###ETHERCAR
+
+##Executive Summary 
+
+EtherCar is an on-chain platform for car rentals. Among the numerous benefits that come with blockchain technology, privacy and data security is a critical one. Consumer data is constantly at risk of data breaches leading to not just millions of accounts getting compromised, but also leading to billions of dollars in industry losses. With blockchain-enabled technology, we can better protect consumer data and privacy through wallet-enabled transactions. 
+
+
+##How To Run 
+
+1. Go to the website (Streamlit). 
+2. Enter the inputs in the sidebar to specify the duration of the rental. 
+3. Select the car to rent among the choices. 
+4. Verify the transaction in your wallet. 
+
+
+##Documents
+
+1. Team Presentations (Slides) <https://docs.google.com/presentation/d/1elToGQYKbCMz6aAhTmMEh6qNynDNbQPG_OPiWubgP3Q/edit#slide=id.g13b7972c535_0_71>
+
+2. Team Charter <https://docs.google.com/document/d/1lY8t0cZMxxiIFc68L89hNWnGC5Kwznit7YF4jXzV9yA/edit#>
+
+
+##Tech Dependencies 
+Required programs, libraries, systems, and overall dependencies: 
+Solidity 0.5.16
+Python (version 3.0 or later)
+Ganache
+Truffle
+JS Node
+JSOn
+Web3
+HTTPProvider
+Calendar
+email.mime
+re
+sre_constants
+click
+streamlit 
+pandas
+pathlib 
+
+##Smart Contract
+
+Two smart contracts are called into the program: 
+1. Rental.sol - process the rental using the rent function
+2. RenterSystem.sol - process the payment using the addRenter, checkOut, balanceOf, balanceOfRenter, and makePayment functions
+
+##Technical Notes
+
 1. Download NodeJS https://nodejs.org/en/download/
 2. Run `npm install`. It will install dependencues on package.json
 3. Run `npx truffle compile`. This uses truffle to compile the contract.
