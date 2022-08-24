@@ -138,13 +138,13 @@ Total = Total()
 if 'Hourly' not in st.session_state:
     st.session_state['Hourly'] = 0
 
-# Four Hour Streamlit session state test. 
+# Four Hour Streamlit session state  
 
 if 'FOURHOUR' not in st.session_state:
     st.session_state["FOURHOUR"] = 0 
 
 
-# Daily streamlit session state test.
+# Daily streamlit session state.
 
 if 'Daily' not in st.session_state:
     st.session_state['Daily'] = 0
