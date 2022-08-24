@@ -25,15 +25,20 @@ web3.eth.defaultAccount = web3.eth.accounts[0]
 # Path to the compiled contract JSON file
 compiled_contract_path = 'build/contracts/Rental.json'
 
+#Compiled_contract_path_forTotal = 'build/contracts/RentalSystem.json'
 
 # Deployed contract address (see `migrate` command output: `contract address`)
 deployed_contract_address = '0x01aA9a6693530903D3d63a8447731D31c56ae4Ad'
+
 
 with open(compiled_contract_path) as file:
     contract_json = json.load(file)  # load contract info as JSON
     # fetch contract's abi - necessary to call its functions
     contract_abi = contract_json['abi']
 
+#with open(Compiled_contract_path_forTotal) as file:
+    #contract_json = json.load(file)
+    #contract_abiTotal = contract_json['abi']
 
 # Fetch deployed contract reference
 contract = web3.eth.contract(
