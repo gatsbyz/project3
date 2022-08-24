@@ -84,6 +84,12 @@ SUCCESSimg = ("Streamlit_Resources/Long_Road.jpg")
 # Title IMG print
 st.image(titleIMG)
 
+Hourly = 0
+Daily = 0
+# Hour price Streamlit session state test. 
+if 'Hourly' not in st.session_state:
+    st.session_state['Hourly'] = 0
+
 
 # Price Chart import
 Price1Chart = pd.read_csv(
@@ -133,10 +139,9 @@ class Total:
     def getVal(self):
         return self._value
 Total = Total()
-# Hour price Streamlit session state test. 
 
-if 'Hourly' not in st.session_state:
-    st.session_state['Hourly'] = 0
+
+
 
 # Four Hour Streamlit session state  
 
@@ -167,7 +172,7 @@ st.write("# Pick your Car!")
 CarData = {'MOD': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
            'HOURLY': [112.50, 250, 100, 199.75, 50, 112.50, 99.75, 99.75, 150, 100, 87.25, 50],
            'FOURHOUR' : [449.99, 999.99, 399,99, 799.00, 199.99, 449.99, 399.99, 399.99, 599.99, 349.99, 249.99, 399.99],
-           'DAY': [1000, 2000, 600, 1200, 250, 700, 700, 600, 1200, 475, 250, 600]
+           'DAY': [999, 1999.99, 599.99, 1199, 249, 699, 699, 599, 1199, 475, 249.99, 599.99]
            }
 
 HH = CarData["DAY"][3]
@@ -276,7 +281,7 @@ with col10:
     if st.button("Book your Range Rover!"):
         car.setId(10)
         ModleID = CarData['MOD'][9]
-        Hourly = 4 * CarData['FOURHOUR'][9]
+        Hourly = CarData['FOURHOUR'][9]
         Daily = CarData['DAY'][9]
         GreatChoice()
 
@@ -285,7 +290,7 @@ with col11:
     if st.button("Book Your VanderHall!"):
         car.setId(11)
         ModleID = CarData['MOD'][10]
-        Hourly = 4 * CarData['FOURHOUR'][10]
+        Hourly =  CarData['FOURHOUR'][10]
         Daily = CarData['DAY'][10]
         GreatChoice()
 
@@ -294,14 +299,14 @@ with col12:
     if st.button("Book your Deville now!"):
         car.setId(12)
         ModleID = CarData['MOD'][11]
-        Hourly = 4 * CarData['FOURHOUR'][11]
+        Hourly =  CarData['FOURHOUR'][11]
         Daily = CarData['DAY'][11]
         GreatChoice()
 
 
 
-def H_price():
-    four_h_price = Hourly * number_of_H_R
+#def H_price():
+    #four_h_price = Hourly * number_of_H_R
     #st.sidebar.write(four_h_price)
 
 
@@ -336,9 +341,9 @@ time_input = st.sidebar.time_input("Please select the time of your reservation:"
 
 ## PRICING/PRINT IF STATEMENTS WORKS, BREAKES BALLONS ## 
 if hours_amt == 4 :
-    st.sidebar.write(Hourly * number_of_H_R)
+    st.sidebar.write("Total Price $", Hourly * number_of_H_R)
 elif hours_amt == 24 :
-    st.sidebar.write(Daily * number_of_H_R)
+    st.sidebar.write("Total Price $", Daily * number_of_H_R)
 
 #st.sidebar.write(Hourly)
 #st.sidebar.write(Daily)
