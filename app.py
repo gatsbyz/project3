@@ -48,6 +48,8 @@ print(message)
 # print(message[0])
 # print(int.from_bytes(message, "big"))
 
+#TEST adress :
+_to = 0x4AC45fAA82B0B53aB8AE430FdA675E8f0F40d228
 
 ##STREAMLIT UI###
 
@@ -114,8 +116,18 @@ class Car:
     return self.carId
 car = Car()
 
+def passPrice():
+    st.sidebar.write(Total._value)
+    return contract.functions.transfer(Total.getVal()).transact()
 
-
+class Total:
+    
+    def setTotal(self, tab):
+        self._value = tab
+        print(self._value)
+    def getVal(self):
+        return self._value
+Total = Total()
 # Hour price Streamlit session state test. 
 
 if 'Hourly' not in st.session_state:
@@ -309,6 +321,13 @@ calendar_input = st.sidebar.date_input("Please select your rental date: ", value
 time_input = st.sidebar.time_input("Please select the time of your reservation:", value=None, key=None,
                                    help=None, on_change=None, args=None, kwargs=None, disabled=False)
 #Val = 100000000000000000
+
+
+#function  for setting total amount passed
+
+#def fourHour():
+    #Total = Hourly * number_
+
 
 ## PRICING/PRINT IF STATEMENTS WORKS, BREAKES BALLONS ## 
 if hours_amt == 4 :
