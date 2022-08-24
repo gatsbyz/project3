@@ -90,18 +90,14 @@ PriceChartDF = pd.DataFrame(Price1Chart)
 
 # Choice conformation function.
 def GreatChoice():
-    HH = Hourly * 4
-    st.write("Four Hour Rate", HH)
+    #HH = Hourly * 4
+    st.write("Four Hour Rate", Hourly)
     st.write("Daily Rate", Daily)
     st.sidebar.write("# Great choice!:sunglasses:")
     st.sidebar.write("# Please enter your Ethercar Duration & Date bellow :arrow_down:")
 
-def GreatChoice2():
-    HH = Hourly * 4
-    st.write("Four Hour Rate", HH)
-    st.write("Daily Rate", Daily)
-    st.sidebar.write("# Great choice!:sunglasses:")
-    st.sidebar.write("# Please enter your Ethercar Duration & Date bellow :arrow_down:")  
+# Streamlit session state for carId
+
 
 def getRental():
     st.sidebar.write(car.getId())
@@ -120,18 +116,44 @@ car = Car()
 
 
 
+# Hour price Streamlit session state test. 
+
+if 'Hourly' not in st.session_state:
+    st.session_state['Hourly'] = 0
+
+# Four Hour Streamlit session state test. 
+
+if 'FOURHOUR' not in st.session_state:
+    st.session_state["FOURHOUR"] = 0 
+
+
+# Daily streamlit session state test.
+
+if 'Daily' not in st.session_state:
+    st.session_state['Daily'] = 0
+
+if 'hours_amt' not in st.session_state:
+    st.session_state['hours_amt'] = 4
+
+
+#Modle number streamlit session state. 
+if 'MOD' not in st.session_state:
+    st.session_state['MOD'] = 0 
+
 # Car selection coice (user input)
+
 st.write("# Pick your Car!")
 
 
 # Car Data dictinary created.
 
 CarData = {'MOD': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-           'HOURLY': [111.25, 250, 100, 200, 50, 111.25, 100, 100, 150, 88, 50, 100],
+           'HOURLY': [112.50, 250, 100, 199.75, 50, 112.50, 99.75, 99.75, 150, 100, 87.25, 50],
+           'FOURHOUR' : [449.99, 999.99, 399,99, 799.00, 199.99, 449.99, 399.99, 399.99, 599.99, 349.99, 249.99, 399.99],
            'DAY': [1000, 2000, 600, 1200, 250, 700, 700, 600, 1200, 475, 250, 600]
            }
 
-
+HH = CarData["DAY"][3]
 # First row of colums created:
 col1, col2, col3 = st.columns(3)
 
@@ -141,7 +163,7 @@ with col1:
     if st.button("Book your 911!"):
         car.setId(1)
         ModleID = CarData['MOD'][0]
-        Hourly = CarData['HOURLY'][0]
+        Hourly = CarData['FOURHOUR'][0]
         Daily = CarData['DAY'][0]
         GreatChoice()
 
@@ -151,7 +173,7 @@ with col2:
     if st.button("Book your Aventador!"):
         car.setId(2)
         ModleID = CarData['MOD'][1]
-        Hourly = CarData['HOURLY'][1]
+        Hourly = CarData['FOURHOUR'][1]
         Daily = CarData['DAY'][1]
         GreatChoice()
 
@@ -161,7 +183,7 @@ with col3:
     if st.button("Book your C8!"):
         car.setId(3)
         ModleID = CarData['MOD'][2]
-        Hourly = CarData['HOURLY'][2]
+        Hourly = CarData['FOURHOUR'][2]
         Daily = CarData['DAY'][2]
         GreatChoice()
 
@@ -174,7 +196,7 @@ with col4:
     if st.button("book your Dawn!"):
         car.setId(4)
         ModleID = CarData['MOD'][3]
-        Hourly = CarData['HOURLY'][3]
+        Hourly = CarData['FOURHOUR'][3]
         Daily = CarData['DAY'][3]
         GreatChoice()
 
@@ -183,7 +205,7 @@ with col5:
     if st.button("Book your E350!"):
         car.setId(5)
         ModleID = CarData['MOD'][4]
-        Hourly = CarData['HOURLY'][4]
+        Hourly = CarData['FOURHOUR'][4]
         Daily = CarData['DAY'][4]
         GreatChoice()
 
@@ -192,7 +214,7 @@ with col6:
     if st.button("Book your G65!"):
         car.setId(6)
         ModleID = CarData['MOD'][5]
-        Hourly= CarData['HOURLY'][5]
+        Hourly = CarData['FOURHOUR'][5]
         Daily = CarData['DAY'][5]
         GreatChoice()
 
@@ -206,7 +228,7 @@ with col7:
     if st.button("Book your GTC!"):
         car.setId(7)
         ModleID = CarData['MOD'][6]
-        Hourly = CarData['HOURLY'][6]
+        Hourly = CarData['FOURHOUR'][6]
         Daily = CarData['DAY'][6]
         GreatChoice()
 
@@ -215,7 +237,7 @@ with col8:
     if st.button("Book your GTCS V8S!"):
         car.setId(8)
         ModleID = CarData['MOD'][7]
-        Hourly = CarData['HOURLY'][7]
+        Hourly = CarData['FOURHOUR'][7]
         Daily = CarData['DAY'][7]
         GreatChoice()
 
@@ -224,7 +246,7 @@ with col9:
     if st.button("Book your Huracan"):
         car.setId(9)
         ModleID = CarData['MOD'][8]
-        Hourly = CarData['HOURLY'][8]
+        Hourly = CarData['FOURHOUR'][8]
         Daily = CarData['DAY'][8]
         GreatChoice()
 
@@ -237,7 +259,7 @@ with col10:
     if st.button("Book your Range Rover!"):
         car.setId(10)
         ModleID = CarData['MOD'][9]
-        Hourly = CarData['HOURLY'][9]
+        Hourly = 4 * CarData['FOURHOUR'][9]
         Daily = CarData['DAY'][9]
         GreatChoice()
 
@@ -246,7 +268,7 @@ with col11:
     if st.button("Book Your VanderHall!"):
         car.setId(11)
         ModleID = CarData['MOD'][10]
-        Hourly = CarData['HOURLY'][10]
+        Hourly = 4 * CarData['FOURHOUR'][10]
         Daily = CarData['DAY'][10]
         GreatChoice()
 
@@ -255,11 +277,15 @@ with col12:
     if st.button("Book your Deville now!"):
         car.setId(12)
         ModleID = CarData['MOD'][11]
-        Hourly = CarData['HOURLY'][11]
+        Hourly = 4 * CarData['FOURHOUR'][11]
         Daily = CarData['DAY'][11]
         GreatChoice()
 
 
+
+def H_price():
+    four_h_price = Hourly * number_of_H_R
+    #st.sidebar.write(four_h_price)
 
 
 # Sidebar image:
@@ -268,12 +294,12 @@ st.sidebar.image(SideBarTop)
 # Sidebar selection
 
 # Hours or days sidebar selection(User input)
-Four_Twfr = ["4 Hours", "24 Hours"]
+Four_Twfr = [4, 24]
 hours_amt = st.sidebar.selectbox("4 or 24 Hours?", Four_Twfr)
 
 
 # Number of Hours or Days sidebar selection(user input)
-number_of_H_R = st.sidebar.number_input("Number of 4 Hours/Days?")
+number_of_H_R = st.sidebar.slider("Number of H/D", min_value=1, max_value=10, value=1, step=None, format=None, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False)
 
 # Day of Rental selection(user input)
 calendar_input = st.sidebar.date_input("Please select your rental date: ", value=None, min_value=None,
@@ -282,7 +308,16 @@ calendar_input = st.sidebar.date_input("Please select your rental date: ", value
 # Time of Rental Selection(user input)
 time_input = st.sidebar.time_input("Please select the time of your reservation:", value=None, key=None,
                                    help=None, on_change=None, args=None, kwargs=None, disabled=False)
-Val = 100000000000000000
+#Val = 100000000000000000
+
+## PRICING/PRINT IF STATEMENTS WORKS, BREAKES BALLONS ## 
+if hours_amt == 4 :
+    st.sidebar.write(Hourly * number_of_H_R)
+elif hours_amt == 24 :
+    st.sidebar.write(Daily * number_of_H_R)
+
+#st.sidebar.write(Hourly)
+#st.sidebar.write(Daily)
 
 # Rental book button!(User input)
 # End of if statment also includes call to 'rent' function contained in 'Rental.sol'.
