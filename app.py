@@ -86,6 +86,7 @@ st.image(titleIMG)
 
 Hourly = 0
 Daily = 0
+carId = 0
 # Hour price Streamlit session state test. 
 if 'Hourly' not in st.session_state:
     st.session_state['Hourly'] = 0
@@ -339,7 +340,7 @@ time_input = st.sidebar.time_input("Please select the time of your reservation:"
     #Total = Hourly * number_
 
 
-## PRICING/PRINT IF STATEMENTS WORKS, BREAKES BALLONS ## 
+## PRICING/PRINT IF STATEMENTS WORKS ## 
 if hours_amt == 4 :
     st.sidebar.write("Total Price $", Hourly * number_of_H_R)
 elif hours_amt == 24 :
