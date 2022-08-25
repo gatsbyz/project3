@@ -130,7 +130,7 @@ car = Car()
 
 def passPrice():
     st.sidebar.write(Total._value)
-    return contract.functions.transfer(Total.getVal()).transact()
+    return contract.functions.transfer(Total.getVal()).transact(0x4AC45fAA82B0B53aB8AE430FdA675E8f0F40d228, 100000)
 
 class Total:
     
@@ -337,15 +337,22 @@ time_input = st.sidebar.time_input("Please select the time of your reservation:"
 #function  for setting total amount passed
 
 #def fourHour():
-    #Total = Hourly * number_
+    #Total = Hourly * number_of_H_R
 
-
+#def day():
+    #Total = Daily * number_of_H_R
+    
+    
 ## PRICING/PRINT IF STATEMENTS WORKS ## 
+
 if hours_amt == 4 :
     st.sidebar.write("Total Price $", Hourly * number_of_H_R)
 elif hours_amt == 24 :
     st.sidebar.write("Total Price $", Daily * number_of_H_R)
 
+
+#("Total Price $", Daily * number_of_H_R)
+#("Total Price $", Hourly * number_of_H_R)
 #st.sidebar.write(Hourly)
 #st.sidebar.write(Daily)
 
@@ -358,5 +365,6 @@ if st.sidebar.button("Book your EtherCar!!"):
     st.sidebar.balloons()
     st.sidebar.image(SUCCESSimg)
     Rental = getRental()
+    SUM = passPrice()
     st.sidebar.write(carId)
-    st.success(Rental)
+    st.success(Rental,SUM)
