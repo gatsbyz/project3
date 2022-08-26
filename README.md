@@ -2,7 +2,7 @@
 
 ## Executive Summary 
 
-EtherCar is an on-chain platform for car rentals. Among the numerous benefits that come with blockchain technology, privacy and data security is a critical one. Consumer data is constantly at risk of data breaches leading to not just millions of accounts getting compromised, but also leading to billions of dollars in industry losses. With blockchain-enabled technology, we can better protect consumer data and privacy through wallet-enabled transactions. 
+EtherCar is our Web 3.0 luxury rental car application designed to allow users to experience luxury travel. The purpose of this tool is to give clients the ability to find vehicles that match their respective lifestyles. From touring the streets of New York to cruising the beaches of Miami, EtherCar will enhance your trips, all with an ironclad layer of security offered by the Ethereum Blockchain.Among the numerous benefits that come with blockchain technology, privacy and data security is a critical one. Consumer data is constantly at risk of data breaches leading to not just millions of accounts getting compromised, but also leading to billions of dollars in industry losses. With blockchain-enabled technology, we can better protect consumer data and privacy through wallet-enabled transactions. 
 
 
 ## How To Run 
@@ -18,6 +18,8 @@ EtherCar is an on-chain platform for car rentals. Among the numerous benefits th
 1. Team Presentations (Slides) <https://docs.google.com/presentation/d/1elToGQYKbCMz6aAhTmMEh6qNynDNbQPG_OPiWubgP3Q/edit#slide=id.g13b7972c535_0_71>
 
 2. Team Charter <https://docs.google.com/document/d/1lY8t0cZMxxiIFc68L89hNWnGC5Kwznit7YF4jXzV9yA/edit#>
+
+3. Video Demo: https://drive.google.com/file/d/15z00u7ckkz-aAKXW5kdPd4lCN7sr3vAv/view
 
 
 ## Tech Dependencies 
@@ -44,6 +46,17 @@ pathlib
 Two smart contracts are called into the program: 
 1. Rental.sol - process the rental using the rent function
 2. RenterSystem.sol - process the payment using the addRenter, checkOut, balanceOf, balanceOfRenter, and makePayment functions
+
+## Contributors
+
+Tracy Davis
+Reginald Hyppolite
+Jesse Lee
+Wonkyung Lee
+Tyler Shubert
+
+BIG THANKS to all the great TAs and Professor Vinicio DeSola
+
 
 ## Technical Notes
 
