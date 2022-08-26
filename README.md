@@ -41,7 +41,7 @@ streamlit
 pandas
 pathlib 
 
-## Smart Contract
+## Smart Contracts
 
 Two smart contracts are called into the program: 
 1. Rental.sol - process the rental using the rent function
@@ -52,8 +52,9 @@ Two smart contracts are called into the program:
 Tracy Davis
 Reginald Hyppolite
 Jesse Lee
-Wonkyung Lee
 Tyler Shubert
+Wonkyung Lee
+
 
 BIG THANKS to all the great TAs and Professor Vinicio DeSola
 
