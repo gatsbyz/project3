@@ -24,22 +24,22 @@ EtherCar is our Web 3.0 luxury rental car application designed to allow users to
 
 ## Tech Dependencies 
 Required programs, libraries, systems, and overall dependencies: 
-Solidity 0.5.16
-Python (version 3.0 or later)
-Ganache
-Truffle
-JS Node
-JSOn
-Web3
-HTTPProvider
-Calendar
-email.mime
-re
-sre_constants
-click
-streamlit 
-pandas
-pathlib 
+Solidity 0.5.16,
+Python (version 3.0 or later),
+Ganache,
+Truffle,
+JS Node,
+JSON,
+Web3,
+HTTPProvider,
+Calendar,
+email.mime,
+re,
+sre_constants,
+click,
+streamlit,
+pandas,
+pathlib
 
 ## Smart Contracts
 
@@ -49,10 +49,10 @@ Two smart contracts are called into the program:
 
 ## Contributors
 
-Tracy Davis
-Reginald Hyppolite
-Jesse Lee
-Tyler Shubert
+Tracy Davis,
+Reginald Hyppolite,
+Jesse Lee,
+Tyler Shubert,
 Wonkyung Lee
 
 
