@@ -47,6 +47,8 @@ Two smart contracts are called into the program:
 1. Rental.sol - process the rental using the rent function
 2. RenterSystem.sol - process the payment using the addRenter, checkOut, balanceOf, balanceOfRenter, and makePayment functions
 
+![alt text](https://github.com/gatsbyz/project3/blob/W/code_screenshot.jpg)
+
 ## Contributors
 
 Tracy Davis,
