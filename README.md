@@ -13,6 +13,9 @@ EtherCar is our Web 3.0 luxury rental car application designed to allow users to
 4. Verify the transaction in your wallet. 
 
 
+![alt text](https://github.com/gatsbyz/project3/blob/W/Streamlit_app_screenshot.jpg)
+
+
 ## Documents
 
 1. Team Presentations (Slides) <https://docs.google.com/presentation/d/1elToGQYKbCMz6aAhTmMEh6qNynDNbQPG_OPiWubgP3Q/edit#slide=id.g13b7972c535_0_71>
