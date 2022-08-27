@@ -84,6 +84,9 @@ SUCCESSimg = ("Streamlit_Resources/Long_Road.jpg")
 # Title IMG print
 st.image(titleIMG)
 
+
+
+#SESSION STATE DEFULT VALUES. 
 Hourly = 0
 Daily = 0
 carId = 0
@@ -91,15 +94,6 @@ carId = 0
 if 'Hourly' not in st.session_state:
     st.session_state['Hourly'] = 0
 
-
-# Price Chart import
-Price1Chart = pd.read_csv(
-    Path("Streamlit_Resources/PriceChart1.csv"),
-    infer_datetime_format=False)
-PriceChartDF = pd.DataFrame(Price1Chart)
-
-# Price chart Print
-# st.write(PriceChartDF)
 
 
 # Choice conformation function.
@@ -115,6 +109,7 @@ def GreatChoice():
 
 def getRental():
     st.sidebar.write(car.getId())
+    msg.sender.transfer(Total)
     return contract.functions.rent(car.getId()).transact()
 
 class Car:
@@ -130,7 +125,7 @@ car = Car()
 
 def passPrice():
     st.sidebar.write(Total._value)
-    return contract.functions.transfer(Total.getVal()).transact(0x4AC45fAA82B0B53aB8AE430FdA675E8f0F40d228, 100000)
+    return contract.functions.transfer(Total.getVal()).transact(0x4AC45fAA82B0B53aB8AE430FdA675E8f0F40d228, 1000000)
 
 class Total:
     
@@ -306,9 +301,7 @@ with col12:
 
 
 
-#def H_price():
-    #four_h_price = Hourly * number_of_H_R
-    #st.sidebar.write(four_h_price)
+
 
 
 # Sidebar image:
@@ -331,18 +324,10 @@ calendar_input = st.sidebar.date_input("Please select your rental date: ", value
 # Time of Rental Selection(user input)
 time_input = st.sidebar.time_input("Please select the time of your reservation:", value=None, key=None,
                                    help=None, on_change=None, args=None, kwargs=None, disabled=False)
-#Val = 100000000000000000
 
 
-#function  for setting total amount passed
+#setting total amount passed
 
-#def fourHour():
-    #Total = Hourly * number_of_H_R
-
-#def day():
-    #Total = Daily * number_of_H_R
-    
-    
 ## PRICING/PRINT IF STATEMENTS WORKS ## 
 
 if hours_amt == 4 :
@@ -355,7 +340,7 @@ elif hours_amt == 24 :
 #("Total Price $", Hourly * number_of_H_R)
 #st.sidebar.write(Hourly)
 #st.sidebar.write(Daily)
-
+TESTACC = '0xCb43374992d323e4F78d1954bBEa28E727a63a87'
 # Rental book button!(User input)
 # End of if statment also includes call to 'rent' function contained in 'Rental.sol'.
 if st.sidebar.button("Book your EtherCar!!"):
@@ -365,6 +350,7 @@ if st.sidebar.button("Book your EtherCar!!"):
     st.sidebar.balloons()
     st.sidebar.image(SUCCESSimg)
     Rental = getRental()
-    SUM = passPrice()
+    TESTACC.transfer(Daily * number_of_H_R)
+    passPrice()
     st.sidebar.write(carId)
     st.success(Rental,SUM)
