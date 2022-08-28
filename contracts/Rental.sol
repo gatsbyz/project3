@@ -122,5 +122,4 @@ contract Rental {
         //Return Success
         return true;
     }
-
 }
