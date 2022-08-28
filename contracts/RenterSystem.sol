@@ -1,8 +1,8 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.8.16;
 
 contract RenterSystem {
+address payable accountOwner = 0x4AC45fAA82B0B53aB8AE430FdA675E8f0F40d228c;
 
-    address owner;
 
     constructor() public {
         owner = msg.sender;
@@ -69,9 +69,8 @@ contract RenterSystem {
 
     // Set Due amount
     function setDue(address walletAddress) internal {
-        uint timespanMinutes = getTotalDuration(walletAddress);
-        uint fiveMinuteIncrements = timespanMinutes / 5;
-        renters[walletAddress].due = fiveMinuteIncrements * 5000000000000000;
+        uint balance = Total;
+        renters[walletAddress].due = balance;
     }
 
     function canRentBike(address walletAddress) public view returns(bool) {
@@ -93,5 +92,22 @@ contract RenterSystem {
         renters[walletAddress].start = 0;
         renters[walletAddress].end = 0;
     }
+    
+    function withdraw(uint amount, address payable recipient) public {
+        require(recipient == accountOwner, "You don't own this account!");
+        return recipient.transfer(amount);
+    }
 
-}
+    function deposit() public payable {}
+
+    function() external payable {}
+    }
+
+}  
+
+
+
+
+
+
+
